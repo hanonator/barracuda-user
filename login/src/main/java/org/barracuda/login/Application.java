@@ -1,11 +1,9 @@
 package org.barracuda.login;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 
 /**
  * Contains the program entry point and the servlet initializer
@@ -13,9 +11,7 @@ import org.springframework.context.annotation.Configuration;
  * @author brock
  *
  */
-@Configuration
-@ComponentScan
-@EnableAutoConfiguration
+@SpringBootApplication
 public class Application extends SpringBootServletInitializer {
 
 	/**
