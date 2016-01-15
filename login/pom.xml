@@ -72,15 +72,6 @@
 	</dependencies>
 
 	<build>
-		<resources>
-			<resource>
-				<directory>${project.basedir}/src/main/resources</directory>
-			</resource>
-
-			<resource>
-				<directory>${project.build.directory}/generated-resources</directory>
-			</resource>
-		</resources>
 		<pluginManagement>
 			<plugins>
 				<plugin>
@@ -94,13 +85,6 @@
 					<version>2.4</version>
 					<configuration>
 						<failOnMissingWebXml>false</failOnMissingWebXml>
-					</configuration>
-				</plugin>
-				<plugin>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-maven-plugin</artifactId>
-					<configuration>
-						<addResources>true</addResources>
 					</configuration>
 				</plugin>
 			</plugins>
