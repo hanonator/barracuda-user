@@ -15,20 +15,43 @@ import javax.persistence.UniqueConstraint;
 @Table(name = "users", uniqueConstraints = { @UniqueConstraint(name = "un_username", columnNames = "username"),
 		@UniqueConstraint(name = "un_displayname", columnNames = "displayname")})
 public class User implements Serializable {
+	
+	/**
+	 * Used for serializing the object
+	 */
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The user's uid
+	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
 	private Long id;
 
-	@Column(length = 12, unique = true)
+	/**
+	 * The name the user uses to log in to the server
+	 */
+	@Column(name = "username", length = 12, unique = true)
 	private String username;
 
-	@Column(length = 12, unique = true)
+	/**
+	 * The name the user uses in game
+	 */
+	@Column(name = "displayname", length = 12, unique = true)
 	private String displayname;
 
-	@Column(length = 50)
+	/**
+	 * The password. This is saved as an MD5 hash
+	 */
+	@Column(name = "password", length = 50)
 	private String password;
+
+	/**
+	 * The password. This is saved as an MD5 hash
+	 */
+	@Column(name = "disabled", length = 50)
+	private Boolean disabled;
 
 	/**
 	 * Constructor
@@ -80,6 +103,14 @@ public class User implements Serializable {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public Boolean getDisabled() {
+		return disabled;
+	}
+
+	public void setDisabled(Boolean disabled) {
+		this.disabled = disabled;
 	}
 
 	@Override
